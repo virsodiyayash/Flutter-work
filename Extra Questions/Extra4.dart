@@ -1,49 +1,44 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-// const Lab82({super.key});
-
-class Lab82 extends StatefulWidget {
-
-   Lab82({super.key});
+class Extra4 extends StatefulWidget {
+  const Extra4({super.key});
 
   @override
-  State<Lab82> createState() => _Lab82State();
+  State<Extra4> createState() => _Extra4State();
 }
 
-class _Lab82State extends State<Lab82> {
-  TextEditingController name = new TextEditingController();
-
+class _Extra4State extends State<Extra4> {
+  TextEditingController name = TextEditingController();
   bool flag = false;
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Birthday Wisher"),
+        title: Text("Hello, r u fine?"),
         backgroundColor: Colors.blue,
       ),
-
-      body: flag==true?Stack(
+      
+      body: flag==true? Stack(
         children: [
           Center(
             child: Image.asset('assets/images/birthday.jpg'),
           ),
           Center(
             child: Text(
-              'Happy Birthday ${name.text}',
+              "Happy Birthday ${name.text}",
               style: TextStyle(color: Colors.white , fontSize: 50 , backgroundColor:
               Colors.black.withOpacity(0.5)
               ),
             ),
           )
         ],
-      ):Column(
+      ):Center(child: Column(
         children: [
           TextField(
             controller: name,
             decoration: InputDecoration(
-              labelText: "Enter Name",
+              labelText: "Enter your name"
             ),
           ),
           ElevatedButton(onPressed: (){
@@ -52,7 +47,7 @@ class _Lab82State extends State<Lab82> {
             });
           }, child: Text("Submit"))
         ],
-      )
+      ))
     );
   }
 }
